@@ -36,6 +36,20 @@ resource "aws_instance" "demoec2" {
   }
 }
 
+# creating eip 
+
+resource "aws_eip" "myeip1" {
+  vpc = true
+}
+
+# Associating the eip with the  instance
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.demoec2.id
+  allocation_id = aws_eip.myeip1.id
+}
+
+
 # creating security group in a perticular vpc
 
 resource "aws_security_group" "security" {
