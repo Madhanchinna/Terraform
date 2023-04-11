@@ -3,33 +3,33 @@
 # using our private subnet we are creating instance with new security group
 
 terraform {
-    required_providers {
-        aws = {
-            source = "hashicorp/aws"
-            version = "~> 3.0"
-        }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 3.76.1"
     }
+  }
 }
 
 provider "aws" {
-    region = "us-east-2"
+  region = "us-east-2"
 }
 
 resource "aws_instance" "demoec2" {
-  ami               = "ami-0f3c9c466bb525749"
-  instance_type     = "t2.micro"
-  key_name          = "indra"
-  availability_zone = "us-east-2a"
-  user_data         = file("init-script.sh")
-  subnet_id         = "subnet-0c658eabf69814f79"
+  ami                    = "ami-0f3c9c466bb525749"
+  instance_type          = "t2.micro"
+  key_name               = "indra"
+  availability_zone      = "us-east-2a"
+  user_data              = file("init-script.sh")
+  subnet_id              = "subnet-0c658eabf69814f79"
   vpc_security_group_ids = [aws_security_group.security.id]
-  
+
   source_dest_check = true
-    root_block_device {
-        volume_size = 8
-        volume_type = "gp2"
-        delete_on_termination = true
-    }
+  root_block_device {
+    volume_size           = 8
+    volume_type           = "gp2"
+    delete_on_termination = true
+  }
 
   tags = {
     Name = "terraform-web-server"
@@ -77,5 +77,3 @@ resource "aws_security_group" "security" {
     }
   }
 }
-
-
