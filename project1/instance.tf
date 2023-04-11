@@ -2,6 +2,18 @@
 # old resources subnet, ami, vpc
 # using our private subnet we are creating instance with new security group
 
+terraform {
+    required_providers {
+        aws = {
+            source = "hashicorp/aws"
+            version = "~> 3.0"
+        }
+    }
+}
+
+provider "aws" {
+    region = "us-east-2"
+}
 
 resource "aws_instance" "demoec2" {
   ami               = "ami-0f3c9c466bb525749"
