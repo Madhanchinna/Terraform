@@ -7,7 +7,7 @@
 
 **VPC.tf** :cloud:
   
- `Custom VPC in the range 10.0.0.0 with 3 public subnet 6 private subnet, public subnets associated with web route table, private subnet associated with app and db route table, Internet gateway associated with public subnet.`
+ `Custom VPC in the range 10.0.0.0/16 with 3 public subnet 6 private subnet, public subnets associated with web route table, private subnet associated with app and db route table, Internet gateway associated with public subnet.`
 
 **ec2.tf**
   `This file ec2 resources ami is maped with the instance resources`
