@@ -17,4 +17,27 @@ Security groups are associate with the instance
 variables.tf
 All the variables are declred in this file
 
+Resources need to be created / installed :
+Custom VPC
+
+2 Subnets (Public)
+
+1 Subnet (Private)
+
+2 EC2 Instances
+
+Security Group
+
+Elastic IP
+
+NAT Gateway
+
+Internet Gateway
+
+Route Table
+
+Application Load Balancer
+
+Apache Webserver
+
 
