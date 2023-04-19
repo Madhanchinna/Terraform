@@ -2,7 +2,7 @@
 
  **Project 1**
  
-     * creating Ec2 Instance, Security group
+     * Project Contains Three Tire Architecturein in a custom VPC
      
  **Project 2** 
  
